@@ -74,16 +74,19 @@
 .nav > .left{
 	float: left;
 	width: 0;
+	z-index: 52;
 	height: 100%;
 	background-color: #3d5464;
     color: white;
     overflow-y:auto;
+    box-shadow: 10px 10px 5px black;
 }
 .nav > .right{
 	
     background-color: white;
 	width: 0;
 	height: 100%;
+	z-index: 51;
 	float:right;
     overflow-y:auto;
     
@@ -105,6 +108,7 @@
     font-size: 1.8em;
     padding-left: 0;
     list-style-type: none;
+    padding-left: 5%;
     font-family: 'Open Sans' , serif; 
     overflow-y: auto
 }
