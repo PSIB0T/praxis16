@@ -1,0 +1,163 @@
+.trigger2{
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    line-height: 8px;
+    padding: 1px 3px 0;
+    float: left;
+}
+.cross{
+  display: none;
+  width: 40px;
+  height: 40px;
+}
+.crossline{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 47%;
+    
+}
+.crossline:last-child{
+  transform: rotate(-45deg);
+}
+.trigger > a{
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+.trigger .menu{
+    float: right;
+    position: relative;
+    margin-top: 10px;
+    font-family: 'Open Sans'
+}
+.trigger{
+	width: 100px;
+    height: 25px;
+    
+    position: relative;
+    z-index: 60;
+}
+.trigger > a > .trigger2 > .line{
+	display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: white;
+}
+@media only screen and (max-width: 768px){
+	.trigger{
+		width: 90px;
+    	height: 30px;
+    	line-height: 12px;
+	}
+}
+.nav{
+    width: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    padding-top: 0px;
+    opacity: 0.95;
+}
+.nav:first-child{
+    background-color: blue;
+}
+.nav > .left{
+	float: left;
+	width: 0;
+	height: 100%;
+	background-color: #3d5464;
+    color: white;
+    overflow-y:auto;
+}
+.nav > .right{
+	
+    background-color: white;
+	width: 0;
+	height: 100%;
+	float:right;
+    overflow-y:auto;
+    
+}
+.navmob{
+    float: left;
+    width: 100%;
+    height: 0%;
+    background-color: red;
+}
+.left > .contents{
+    font-size: 2em;
+    padding-left: 65%;
+    list-style-type: none;
+    font-family: 'Open Sans' , serif; 
+    overflow-x: auto
+}
+.right > .contents{
+    font-size: 1.8em;
+    padding-left: 0;
+    list-style-type: none;
+    font-family: 'Open Sans' , serif; 
+    overflow-y: auto
+}
+.contents > li{
+    margin-top:20px;
+    margin-bottom: 40px;
+
+}
+
+.left > .contents > li > a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.left > .contents > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.left > .contents > li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.left > .contents > li > a:hover {
+  color: white;
+}
+.left > .contents > li:first-child{
+    margin-top:120px;
+}
+
+.right > .contents > .li{
+
+}
+@media only screen and (max-width: 768px){
+    .left > .contents{
+        font-size: 2.7em;
+        padding: 0;
+        text-align: center;
+    }
+    .contents > li:first-child{
+        margin-top: 100px;
+    }
+}
