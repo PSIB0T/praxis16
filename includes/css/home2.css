@@ -1,0 +1,19 @@
+.divmain{
+    
+}
+.div1{
+	position: relative;
+    padding-top: 37px;
+    height: 100vh;
+    top: -37px;
+    background-color: blue;
+}
+.div2{
+	position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow-x: hidden;
+    padding: 0 5pc;
+    height: 100vh;
+    background-color: red;
+}

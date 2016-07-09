@@ -1,10 +1,12 @@
 $(document).ready(function() {
-	 function rotateImg(){
+	 //Rotates the cross in navbar
+   function rotateImg(){
     $(".cross").rotate({
       angle: 0,
-      animateTo:360
+      animateTo:360 
       });
    }
+   /*Checks if window size is above 768px or not. If yes, double navbar is used, else single navbar is used */
    $(window).resize(function(){
 		if($(window).width() > 768 && !($('#nav2').hasClass('right'))){
 			$('#nav2').addClass('right');
@@ -21,12 +23,13 @@ $(document).ready(function() {
 		}	
 	});
 
-
-	$('.trigger').toggle(function(){
+  $('#nav1 .contents').slideUp(); //Initially, contents of left navbar are slided up
+	/* Navbar button trigger*/
+  $('.trigger').toggle(function(){
 	$('.nav').css('width' , '100%').fadeIn('slow');
 	$('.trigger2, .menu').fadeOut();
   $('body').css('overflow-y', 'hidden');
-  rotateImg();
+  rotateImg(); //Rotates cross
   $('.cross').fadeIn();
 	if($(window).width() > 768){
 		$('.nav > .left').animate({
@@ -42,9 +45,11 @@ $(document).ready(function() {
     		width: '100%',
     	}, 600, 'swing');
 	}
+  $('#nav1 .contents').slideDown(500);
 },function(){
 	   $('.nav').fadeOut(600);
     rotateImg();
+    $('#nav1 .contents').slideUp(500);
      $('body').css('overflow-y', 'visible');
     $('.cross').fadeOut();
     $('.trigger2, .menu').fadeIn();
@@ -58,16 +63,10 @@ $(document).ready(function() {
     		}, 600, 'swing').removeClass('active'); 
     	}
 });
-	$('.left li').hover(function(){
-	  $(this).animate({paddingLeft: '+=20px',
-	  				
-	},400);
-  }, function(){
-  	$( this ).animate({paddingLeft: '-=20px',
-						
-  						},400);
-  });
 	
+	/*Checks hover and click. If hover-time is more than 600ms then right elements appear via hover. 
+  If clicked before that, then elements appear via click and waiting class is removed for, the event should not
+  trigger via hover  */
 	$('.left .events').toggle(function(){
 	 $( this )
       .removeClass('waiting');

@@ -1,5 +1,9 @@
 html{
     background-color: black;
+    margin: 0;
+}
+body{
+    margin: 0;
 }
 
 .mediaCover{
@@ -19,7 +23,7 @@ html{
     z-index: 3;
 }
 .main > .logonstuff{
-    height: 100vw;
+    height: 100vh;
 }
 
 .main > .logonstuff > .logo{
@@ -69,10 +73,15 @@ html{
 #trailer{
     position: absolute;
     z-index: 7;
-    display: none;
     border: none;
     left: 0;
     top: 10%;
+    max-width: 1000px;
+}
+@media only screen and (min-width: 1000px){
+    #trailer{
+        margin-left:10%;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -91,13 +100,76 @@ html{
         font-size: 18px;
     }
 }
-.main > .desc{
-    height: 100vw;
-    z-index: 3;
-    width: 100%
+@media only screen and (max-height: 420px){
+    .logonstuff > .buttoncol{
+        bottom: 2em;
+       }    
+
+    .buttoncol > .button{
+        width: 150px;
+        height: 30px;
+        font-size: 16px;
+    }
 }
-.main > .desc > p{
-   z-index: 5;
+.main > .desc{
+    height: 70vh;
+    z-index: 3;
+    width: 100%;
+    background-color: #f3f2f2;
     position: relative;
-    top: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    overflow-y: auto;
+    font-family: 'Lato';
+}
+.main > .desc > .contents{
+   
+    position: relative;
+    text-align: center;
+}
+.desc > .contents > .title , p{
+    margin-bottom: 22px;
+}
+.desc > .columns{
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    color: #bcbcbc;
+}
+.desc > .columns h2{
+    color: #000000;
+}
+.desc > .columns > .col1{
+    float: left;
+    width: 48%;
+    text-align: center;
+    margin-right: 2%
+}
+.desc > .columns > .col2{
+    float: left;
+    width: 48%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 480px){
+    .desc > .columns > .col1{
+    
+    width: 100%;
+    margin-bottom:1em;
+}
+.desc > .columns > .col2{
+    
+    width: 100%;
+    margin-bottom:1em;
+}
+}
+.sponsors{
+    height: 70vh;
+    width: 100%;
+    z-index: 4;
+    background-color: #47b475;
+    position: relative;
 }
