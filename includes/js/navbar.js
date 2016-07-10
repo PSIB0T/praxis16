@@ -6,6 +6,20 @@ $(document).ready(function() {
       animateTo:360 
       });
    }
+   function addfixed(){
+      $('.trigger').addClass('fixed');
+   }
+   function removefixed(){
+       $('.trigger').removeClass('fixed');
+      }
+   
+   $(window).scroll(function(){
+      if($(window).scrollTop() > $('.desc').offset().top){
+          addfixed();
+      }else{
+          removefixed();
+       }
+   });
    /*Checks if window size is above 768px or not. If yes, double navbar is used, else single navbar is used */
    $(window).resize(function(){
 		if($(window).width() > 768 && !($('#nav2').hasClass('right'))){
@@ -29,8 +43,9 @@ $(document).ready(function() {
 	$('.nav').css('width' , '100%').fadeIn('slow');
 	$('.trigger2, .menu').fadeOut();
   $('body').css('overflow-y', 'hidden');
+  removefixed();
   rotateImg(); //Rotates cross
-  $('.cross').fadeIn();
+  $('.cross').fadeIn('slow');
 	if($(window).width() > 768){
 		$('.nav > .left').animate({
     		width: '70%',
@@ -49,6 +64,9 @@ $(document).ready(function() {
 },function(){
 	   $('.nav').fadeOut(600);
     rotateImg();
+    if($(window).scrollTop() > $('.desc').offset().top){
+    addfixed();
+  }
     $('#nav1 .contents').slideUp(500);
      $('body').css('overflow-y', 'visible');
     $('.cross').fadeOut();
@@ -87,6 +105,18 @@ $(document).ready(function() {
   }, function() {
     $('.waiting').removeClass('waiting');
   });
+  $("#nav1 .about").click(function() {
+    $('.trigger').click();
+    $('html, body').animate({
+        scrollTop: $(".desc").offset().top
+    }, 600);
+});
+  $("#nav1 .sponsors").click(function() {
+    $('.trigger').click();
+    $('html, body').animate({
+        scrollTop: $(".main > .sponsors").offset().top
+    }, 600);
+});
 
   });
 

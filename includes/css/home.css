@@ -8,15 +8,15 @@ body{
 
 .mediaCover{
     width: 100%;
-    height: 100%;
+    height: 105vh;
     z-index: 2;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background-image: url(images/VESIT.jpg);
     background-position: 50% 50%;
     background-size: cover;
-    opacity: .4;
+    opacity: .3;
 }
 .main{
     height: auto;
@@ -112,26 +112,28 @@ body{
     }
 }
 .main > .desc{
-    height: 70vh;
+    height: 100%;
     z-index: 3;
     width: 100%;
     background-color: #f3f2f2;
     position: relative;
     box-sizing: border-box;
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 20px;
+    padding: 5em 5px 5em 5px;
+    font-size: 1em;
     overflow-y: auto;
     font-family: 'Lato';
+
 }
 .main > .desc > .contents{
    
     position: relative;
     text-align: center;
 }
-.desc > .contents > .title , p{
-    margin-bottom: 22px;
+.desc > .contents > p{
+    margin-bottom: 3em;
+}
+.desc > .contents > .title{
+    margin-bottom: 1em;
 }
 .desc > .columns{
     width: 100%;
@@ -155,19 +157,22 @@ body{
 }
 
 @media only screen and (max-width: 480px){
+    .main > .desc{
+        font-size: 1.2em;
+    }
     .desc > .columns > .col1{
     
-    width: 100%;
-    margin-bottom:1em;
+        width: 100%;
+        margin-bottom:1em;
 }
-.desc > .columns > .col2{
+    .desc > .columns > .col2{
     
-    width: 100%;
-    margin-bottom:1em;
+        width: 100%;
+        margin-bottom:1em;
 }
 }
-.sponsors{
-    height: 70vh;
+.main > .sponsors{
+    height: 100vh;
     width: 100%;
     z-index: 4;
     background-color: #47b475;
